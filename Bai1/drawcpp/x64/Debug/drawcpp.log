@@ -1,0 +1,6 @@
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol line referenced in function main
+main.obj : error LNK2019: unresolved external symbol closegraph referenced in function main
+main.obj : error LNK2019: unresolved external symbol initwindow referenced in function main
+graphics.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Dat Game\Documents\VStudio_Source\drawcpp\x64\Debug\drawcpp.exe : fatal error LNK1120: 3 unresolved externals

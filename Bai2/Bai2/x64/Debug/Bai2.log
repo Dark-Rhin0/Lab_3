@@ -1,0 +1,19 @@
+﻿  cDaGiac.cpp
+C:\Users\Dat Game\Documents\VStudio_Source\Bai2\Bai2\cDaGiac.cpp(86,46): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Dat Game\Documents\VStudio_Source\Bai2\Bai2\cDaGiac.cpp(86,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Dat Game\Documents\VStudio_Source\Bai2\Bai2\cDaGiac.cpp(86,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Dat Game\Documents\VStudio_Source\Bai2\Bai2\cDaGiac.cpp(86,19): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  cDiem.cpp
+  cDiem.h
+  main.cpp
+  Generating Code...
+x64\Debug\cDiem.obj : warning LNK4042: object specified more than once; extras ignored
+cDaGiac.obj : error LNK2019: unresolved external symbol line referenced in function "public: void __cdecl cDaGiac::Ve(void)" (?Ve@cDaGiac@@QEAAXXZ)
+cDaGiac.obj : error LNK2019: unresolved external symbol setcolor referenced in function "public: void __cdecl cDaGiac::Ve(void)" (?Ve@cDaGiac@@QEAAXXZ)
+cDaGiac.obj : error LNK2019: unresolved external symbol outtextxy referenced in function "public: void __cdecl cDaGiac::HienThiThongTin(int,int)" (?HienThiThongTin@cDaGiac@@QEAAXHH@Z)
+main.obj : error LNK2001: unresolved external symbol outtextxy
+main.obj : error LNK2019: unresolved external symbol cleardevice referenced in function main
+main.obj : error LNK2019: unresolved external symbol closegraph referenced in function main
+main.obj : error LNK2019: unresolved external symbol initwindow referenced in function main
+graphics.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Dat Game\Documents\VStudio_Source\Bai2\x64\Debug\Bai2.exe : fatal error LNK1120: 6 unresolved externals
