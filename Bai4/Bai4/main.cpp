@@ -12,7 +12,7 @@ int main()
     cout << "\nSo lan xuat hien cua x: ";
     cin >> x;
     cout << "la " << a.SoLanXuatHien(x) << " lan" << "\n";
-    a.KeimTraTangDan();
+    a.KiemTraTangDan();
     if (a.LeNhoNhat() < 0)
         {cout << "Mang khong co phan tu le\n";} // TH không có
     else 
