@@ -34,7 +34,7 @@ int cArray::SoLanXuatHien(int x)
     return Dem;
 }
 
-void cArray::KeimTraTangDan()
+void cArray::KiemTraTangDan()
 {
     bool check = true;
     for (int i = 0; i < SoPhanTu - 1; i++)
