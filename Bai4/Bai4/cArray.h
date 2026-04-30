@@ -15,7 +15,7 @@ public:
     void Xuat();
 
     int SoLanXuatHien(int x);
-    void KeimTraTangDan();
+    void KiemTraTangDan();
     int LeNhoNhat();
     int SNTLonNhat();
     void SapXepMangTang();
