@@ -1,4 +1,4 @@
-﻿#include "cTamGiac.h"
+#include "cTamGiac.h"
 #include <iostream>
 #include <cmath>
 #include <cstdio>
@@ -46,10 +46,24 @@ const char* cTamGiac::PhanLoai() {
 	double b = B.KhoangCach(C);
 	double c = C.KhoangCach(A);
 
+	bool can = false; // ban đầu mặc định ko cân
+
+	// Kiểm tra vuông
+	double a2 = a * a, b2 = b * b, c2 = c * c;
+	bool vuong = fabs(a2 + b2 - c2) < 1e-6 ||
+		fabs(b2 + c2 - a2) < 1e-6 ||
+		fabs(a2 + c2 - b2) < 1e-6;
+
+
 	if (fabs(a - b) < 1e-6 && fabs(b - c) < 1e-6)
 		return "Tam giac deu";
 	else if (fabs(a - b) < 1e-6 || fabs(b - c) < 1e-6 || fabs(a - c) < 1e-6)
-		return "Tam giac can";
+	{
+		if (vuong) return "Tam giac vuong can";
+
+		else return "Tam giac can";
+	}
+	else if (vuong) return "Tam giac vuong";
 	else
 		return "Tam giac thuong";
 }
@@ -72,19 +86,34 @@ void cTamGiac::ThuNho(double s) {
 	C.x /= s; C.y /= s;
 }
 
+// Hàm xoay hình quanh trọng tâm G
 void cTamGiac::Xoay(double goc) {
 	double rad = goc * M_PI / 180;
 	double cosGoc = cos(rad);
 	double sinGoc = sin(rad);
-	double xA = A.x * cosGoc - A.y * sinGoc;
-	double yA = A.x * sinGoc + A.y * cosGoc;
-	A.x = xA; A.y = yA;
-	double xB = B.x * cosGoc - B.y * sinGoc;
-	double yB = B.x * sinGoc + B.y * cosGoc;
-	B.x = xB; B.y = yB;
-	double xC = C.x * cosGoc - C.y * sinGoc;
-	double yC = C.x * sinGoc + C.y * cosGoc;
-	C.x = xC; C.y = yC;
+
+	// Tính trọng tâm
+	double gx = (A.x + B.x + C.x) / 3;
+	double gy = (A.y + B.y + C.y) / 3;
+
+	// Hàm xoay 1 điểm quanh tâm
+	auto xoayDiem = [&](double& x, double& y) {
+		// Tịnh tiến về gốc
+		double tx = x - gx;
+		double ty = y - gy;
+
+		// Xoay
+		double rx = tx * cosGoc - ty * sinGoc;
+		double ry = tx * sinGoc + ty * cosGoc;
+
+		// Tịnh tiến ngược lại
+		x = rx + gx;
+		y = ry + gy;
+		};
+
+	xoayDiem(A.x, A.y);
+	xoayDiem(B.x, B.y);
+	xoayDiem(C.x, C.y);
 }
 
 void cTamGiac::Ve() {
