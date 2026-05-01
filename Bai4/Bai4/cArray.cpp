@@ -18,10 +18,12 @@ void cArray::Nhap()
 
 void cArray::Xuat()
 {
+    cout << "Mang vua nhap la: [ ";
     for (auto& phantu : PhanTu)
     {
         cout << phantu << " ";
     }
+    cout << "]";
 }
 
 int cArray::SoLanXuatHien(int x)
@@ -84,7 +86,7 @@ bool KiemTraSNT(int n)
 
 int cArray::SNTLonNhat()
 {
-    int Max = 0;
+    int Max = -1;
     for (auto& phantu : PhanTu)
     {
         if (KiemTraSNT(phantu))
