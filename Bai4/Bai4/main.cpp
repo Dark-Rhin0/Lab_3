@@ -18,7 +18,7 @@ int main()
     else 
         {cout << "Phan tu le nho nhat cua mang: " << a.LeNhoNhat() << "\n";}
 
-    if (a.LeNhoNhat() < 2)
+    if (a.SNTLonNhat() < 2)
         {cout << "Mang khong co so nguyen to\n";} // TH không có
     else
         {cout << "So nguyen to lon nhat cua mang: " << a.SNTLonNhat() << "\n";}
