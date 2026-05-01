@@ -1,4 +1,4 @@
-﻿#include "cNhanVienSX.h"
+#include "cNhanVienSX.h"
 using namespace std;
 
 cNhanVienSX::cNhanVienSX() :
@@ -40,8 +40,8 @@ void cNhanVienSX::Nhap()
     cout << "\nNhap ma so nhan vien: ";           getline(cin, MaSo); // lấy luôn khoảng trắng để in
     cout << "Nhap ten nhan vien: ";               getline(cin, HoTen);
     cout << "Nhap ngay sinh nhan vien: ";         getline(cin, Date);
-    cout << "So san pham da lam ";        cin >> SoSP;
-    cout << "Don gia cua 1 san pham ";    cin >> DonGia;
+    cout << "So san pham da lam: ";        cin >> SoSP;
+    cout << "Don gia cua 1 san pham: ";    cin >> DonGia;
 }
 
 void cNhanVienSX::Xuat()
